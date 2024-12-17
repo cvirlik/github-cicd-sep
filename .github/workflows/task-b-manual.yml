@@ -8,6 +8,10 @@ on:
         required: true
         default: 'Hello CI/CD'
       # TODO: add tag input
+      tag:
+        description: 'Tag'
+        required: true
+        default: 'latest'
 permissions:
   contents: read
   packages: write
