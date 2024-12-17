@@ -43,9 +43,16 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: ./task_b/
+          file:./task_b/Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ inputs.tag }}
-      - name: Fetch index 
-        run: |
-          curl 127.0.0.1:8080/index.html
+          labels: ${{ steps.meta.outputs.labels }}
+  test:
+    runs-on: "ubuntu-latest"
+      name: Test Docker
+      steps:
+        - name: Fetch index 
+          run: |
+            curl 127.0.0.1:8080/index.html
   # TODO: Add test job
