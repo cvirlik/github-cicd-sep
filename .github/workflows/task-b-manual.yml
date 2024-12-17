@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./task_b/
-          file:./task_b/Dockerfile
+          file: ./task_b/Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ inputs.tag }}
           labels: ${{ steps.meta.outputs.labels }}
