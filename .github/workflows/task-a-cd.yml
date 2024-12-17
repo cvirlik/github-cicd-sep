@@ -18,5 +18,3 @@ jobs:
         - name: Run test file
           run: |
             pytest task_a.py
-
-        # TODO: run pytest
