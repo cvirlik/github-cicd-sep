@@ -48,11 +48,5 @@ jobs:
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ inputs.tag }}
           labels: ${{ steps.meta.outputs.labels }}
-  test:
-    runs-on: "ubuntu-latest"
-      name: Test Docker
-      steps:
-        - name: Fetch index 
-          run: |
-            curl 127.0.0.1:8080/index.html
+  
   # TODO: Add test job
